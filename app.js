@@ -29,3 +29,12 @@ tw.stream('statuses/filter', {'follow':SplatoonJP+","+testId}, function(stream) 
     }
   });
 });
+
+// For Heroku Error
+// Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Splatweet is working!\n');
+}).listen(process.env.PORT || 3000);
+console.log('process start!');
