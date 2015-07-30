@@ -7,6 +7,10 @@
     "ntwitter": "^0.5.0",
     "slack-node": "^0.1.3"
   },
+  "engines": {
+    "node": "0.12.3",
+    "npm":  "2.9.1"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
