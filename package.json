@@ -1,0 +1,23 @@
+{
+  "name": "splatweet",
+  "version": "1.0.0",
+  "description": "Get SplatoonJP's tweet and send to Slack",
+  "main": "app.js",
+  "dependencies": {
+    "ntwitter": "^0.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Keishake/Splatweet.git"
+  },
+  "author": "Keishake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keishake/Splatweet/issues"
+  },
+  "homepage": "https://github.com/Keishake/Splatweet#readme"
+}
