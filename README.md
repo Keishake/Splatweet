@@ -1,7 +1,7 @@
 # Splatweet
 Get SplatoonJP's tweet and send to Slack
 
-# setup
+## setup
 
 ```
 $ npm install
@@ -13,4 +13,10 @@ $ heroku config:set WEBHOOK_URL="Your Slack webhook url here"
 $ heroku config:set NODE_ENV="heroku"
 
 ```
+And Deploy to Heroku!
+
+
+## Use in your server (not heroku)
+
+if you want to use it in your server, copy `env.json.base` to `env.json` and set your credentials.   Then `node app.js`.
 
