@@ -14,10 +14,11 @@ var tw = new twitter({
 });
 
 var SplatoonJP = "2888006497";
+var testId = "220981536";
 
-tw.stream('statuses/filter', {'follow':SplatoonJP}, function(stream) {
+tw.stream('statuses/filter', {'follow':SplatoonJP+","+testId}, function(stream) {
   stream.on('data', function (data) {
-    if(data.user.id_str == SplatoonJP){
+    if(data.user.id_str == SplatoonJP || data.user.id_str == testId ){
       slackApi.webhook({
         channel: config.slack_channel,
         username: config.slack_username,
