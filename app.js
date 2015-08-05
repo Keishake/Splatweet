@@ -2,6 +2,7 @@ var common = require('./common');
 var config = common.config();
 var Slack = require('slack-node');
 var twitter = require('ntwitter');
+var _ = require('underscore');
 
 var slackApi = new Slack();
 slackApi.setWebhook(config.slack_webhook_url);
@@ -14,10 +15,13 @@ var tw = new twitter({
 });
 
 var SplatoonJP = "2888006497";
+var SplatoonWorld = "3292437866";
+var UserIds = SplatoonJP+","+SplatoonWorld;
+var UserArray = [SplatoonJP, SplatoonWorld];
 
-tw.stream('statuses/filter', {'follow':SplatoonJP}, function(stream) {
+tw.stream('statuses/filter', {'follow':UserIds}, function(stream) {
   stream.on('data', function (data) {
-    if(data.user.id_str == SplatoonJP ){
+    if(_.contains(UserArray, data.user.id_str)){
       slackApi.webhook({
         channel: config.slack_channel,
         username: config.slack_username,
