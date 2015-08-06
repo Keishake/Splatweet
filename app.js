@@ -16,8 +16,8 @@ var tw = new twitter({
 
 var SplatoonJP = "2888006497";
 var SplatoonWorld = "3292437866";
-var UserIds = SplatoonJP+","+SplatoonWorld;
-var UserArray = [SplatoonJP, SplatoonWorld];
+var UserIds = SplatoonJP;
+var UserArray = [SplatoonJP];
 
 tw.stream('statuses/filter', {'follow':UserIds}, function(stream) {
   stream.on('data', function (data) {
