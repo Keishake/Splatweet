@@ -24,7 +24,7 @@ tw.stream('statuses/filter', {'follow':UserIds}, function(stream) {
     if(_.contains(UserArray, data.user.id_str)){
       slackApi.webhook({
         channel: config.slack_channel,
-        username: data.user.name,
+        username: config.slack_username,
         text: data.text
       }, function(err, response) {
         console.log(response);
